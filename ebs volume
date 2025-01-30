@@ -1,0 +1,19 @@
+create volume and attach it to insctance
+
+
+#to mount voulme to your instance follw below commands
+
+#Verify Volume Attachment
+lsblk
+
+#Format the Volume (If Needed)
+sudo mkfs -t ext4 /dev/xvdf
+
+#Create a Mount Point
+sudo mkdir /mnt/ebs
+
+#Mount the Volume
+sudo mount /dev/xvdf /mnt/ebs
+
+#Verify the mount:
+df -h
