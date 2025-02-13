@@ -1,0 +1,16 @@
+# How to Mount an EFS File System
+
+Step 1: Create an Amazon EFS File System
+  Go to AWS Console → EFS Service → Click Create file system
+
+Step 2: Install NFS Utilities on Your EC2 Instance
+
+  #sudo yum install -y nfs-utils
+
+Step 3: Mount the EFS File System
+
+  #sudo mkdir /mnt/efs
+  #sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev fs-XXXXXXXX.efs.<region>.amazonaws.com:/ /mnt/efs
+
+Step 4: Verify Mounting
+  #df -h
